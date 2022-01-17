@@ -14,6 +14,7 @@
             font-size: 30px;
             color: #fff;
             font-family: 'Noto Sans KR', sans-serif;
+            margin: auto;
         }
         .modal_text2{
             font-size: 25px;
@@ -85,7 +86,7 @@
             let location=$(`#location`).val();
             let study_count=$(`#study_count`).val();
             let study_time=$(`#study_time`).val();
-            let active_type=$(`#online`).val();
+            let active_type=$(`input[name=active_type]:checked`).val();
             let info=$(`#info`).val();
 
             console.log(active_type);
@@ -118,7 +119,6 @@
         <div class="modal-content modal_background">
             <div class="modal-header">
                 <h5 class="modal-title modal_text1" id="exampleModalLabel">INHA STUDY</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form>
@@ -186,19 +186,19 @@
                         <label class="col-form-label modal_text2">활동 유형</label>
                         <div class="check_margin"></div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="online" value="온라인" checked>
+                            <input class="form-check-input" type="radio" name="active_type" id="online" value="온라인" checked>
                             <label class="form-check-label modal_text3" for="online">
                                 온라인
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="offline" value="오프라인">
+                            <input class="form-check-input" type="radio" name="active_type" id="offline" value="오프라인">
                             <label class="form-check-label modal_text3" for="offline">
                                 오프라인
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="blended" value="블렌디드">
+                            <input class="form-check-input" type="radio" name="active_type" id="blended" value="블렌디드">
                             <label class="form-check-label modal_text3" for="blended">
                                 블렌디드
                             </label>
