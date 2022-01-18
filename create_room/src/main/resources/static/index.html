@@ -48,7 +48,7 @@
         }
 
         .modal-body{
-            height: 500px;
+            height: 600px;
             overflow-y: auto;
         }
 
@@ -91,7 +91,7 @@
 
             console.log(active_type);
 
-            let data={'room_title': room_title, 're_start_date': re_start_date, 're_end_date': re_end_date, 'category': category, 'max_join': max_join, 'ac_start_date': ac_start_date, 'ac_end_date': ac_end_date, 'location': location, 'study_count': study_count, 'study_time': study_time, 'active_type': active_type, 'info': info};
+            let data={'roomTitle': room_title, 'reStartDate': re_start_date, 'reEndDate': re_end_date, 'category': category, 'maxJoin': max_join, 'acStartDate': ac_start_date, 'acEndDate': ac_end_date, 'location': location, 'studyCount': study_count, 'studyTime': study_time, 'activeType': active_type, 'info': info};
 
             $.ajax({
                 type: "POST",
@@ -103,7 +103,20 @@
                     window.location.reload();
                 }
             })
+        }
 
+        $(document).ready(function (){
+            getRoom();
+        });
+
+        function getRoom(){
+            $.ajax({
+                type: "GET",
+                url: "/api/rooms",
+                success: function (response) {
+                    console.log(response);
+                }
+            })
         }
     </script>
 </head>
